@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            text-decoration: none;
+        }
+        body {
+            height: 300vh;
+            background: black;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            border-bottom: 1px solid #afafaf93;
+            z-index: 1000; /* لضمان أن يكون الهيدر فوق المحتوى */
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 85%;
+            margin: auto;
+            height: 80px;
+        }
+        header nav .logo {
+            color: #fff;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+        header nav .logo span {
+            color: #08d665;
+        }
+        header nav .links {
+            display: flex;
+        }
+        header nav .links li {
+            position: relative;
+            margin: 0 25px;
+            height: 80px;
+            line-height: 80px;
+            list-style: none;
+        }
+        header nav .links li::after {
+            position: absolute;
+            content: '';
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: #08d665;
+        }
+        header nav .links li:hover::after,
+        header nav .links li.active::after {
+            width: 100%;
+            transition: 0.3s;
+        }
+        header nav .links li a {
+            color: #c8c6c6;
+            font-size: 17px;
+        }
+        header nav .social-links a i {
+            color: #08d665;
+            font-size: 24px;
+            margin-left: 15px;
+        }
+        header nav .social-links a i:hover {
+            color: #fff;
+        }
+        .hero-sec {
+            height: 100vh;
+            background-color: black;
+            display: flex;
+            align-items: center; /* لتوسيط المحتوى عموديًا */
+        }
+        .hero-sec .container {
+            width: 85%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .hero-sec img {
+            width: 200px;
+            border-radius: 50%; /* لجعل الصورة دائرية */
+        }
+        .div-text {
+            color: white; /* لتغيير لون النص */
+        }
+        .div-text h1 {
+            font-size: 48px; /* حجم الخط */
+        }
+        .div-text span {
+            font-size: 24px; /* حجم الخط */
+            display: block; /* لجعلها في سطر جديد */
+            margin: 10px 0; /* مسافة بين العنوان والفقرة */
+        }
+        .div-text p {
+            margin: 20px 0; /* مسافة بين الفقرة وزر */
+        }
+        .btn {
+            background-color: #08f271; /* لون الزر */
+            color: white; /* لون النص داخل الزر */
+            padding: 10px 20px; /* حشوة الزر */
+            border: none; /* إزالة الحدود */
+            border-radius: 5px; /* زوايا دائرية */
+            cursor: pointer; /* تغيير شكل المؤشر عند المرور فوق الزر */
+            text-decoration: none; /* إزالة التسطير */
+        }
+        .btn:hover {
+            background-color: #143de0; /* لون الزر عند المرور فوقه */
+        }
+
+        /* استعلامات الوسائط لتعديل التنسيق عند تصغير الشاشة */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column; /* تغيير الاتجاه إلى عمودي */
+                align-items: flex-start; /* محاذاة العناصر إلى اليسار */
+            }
+            header nav .links {
+                flex-direction: column; /* تغيير الاتجاه إلى عمودي */
+                width: 100%; /* جعل الروابط تأخذ عرض كامل */
+                margin-top: 2px; /* إضافة مسافة بين الشعار والروابط */
+            }
+            header nav .links li {
+                margin: 2px 0; /* إضافة مسافة بين العناصر */
+                height: auto; /* إزالة ارتفاع ثابت */
+                line-height: normal; /* إعادة تعيين ارتفاع السطر */
+            }
+            header nav .social-links {
+                margin-top: 2px; /* إضافة مسافة بين الروابط الاجتماعية */
+            }
+            header nav .social-links a {
+                margin-left: 2px; /* تقليل المسافة بين الأيقونات */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo"><span>eng</span> a7med</a>
+            <ul class="links">
+                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/19pKvEVPyp/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://twitter.com/yourprofile" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero-sec">
+        <div class="container">
+            <div class="div-text">
+                <h1>Ahmed Ramadan</h1>
+                <span>Web Designer</span>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, iste?</p>
+                <a href="#" class="btn">My Works</a>
+            </div>
+            <div class="div-img">
+                <img src="https://scontent.fcai19-3.fna.fbcdn.net/v/t39.30808-6/410556037_1466757220864590_7000622726432987754_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=djrywht3h-QQ7kNvwGZSJm2&_nc_oc=Admnm7TjkIiYfxgchrhKNQyPCFnvdvdAxhwsETSgCu7NLLH0taNAbBHa4TGrSNBjr-g&_nc_zt=23&_nc_ht=scontent.fcai19-3.fna&_nc_gid=8px9D9GqNg-y8UybyvetaA&oh=00_AfEBu_iVjIxDGXWQq19-M7BO9r9af21RIpjcw2pxuGuTDQ&oe=67FBADE2" alt="Ahmed Ramadan">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
